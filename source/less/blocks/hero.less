@@ -1,0 +1,75 @@
+.hero {
+  position: relative;
+  font-family: @secondary-font;
+
+  @media (max-width: @mobile-width) {
+    text-align: center;
+    color: @white;
+  }
+}
+
+.hero__background-wrapper {
+  position: absolute;
+  top: 0;
+  width: 320px;
+  min-height: 302px;
+  background-image: url("../img/index-background-cat.jpg");
+  background-position: center;
+  background-size: 320px 302px;
+  background-repeat: no-repeat;
+  z-index: -1;
+
+  @media (min-width: 321px) and (max-width: 1439px) {
+    display: none;
+  }
+
+  @media (min-width: @desktop-width) {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50%;
+    background-image: url("../img/index-background-cat-desktop.jpg");
+    background-size: cover;
+    background-position: left;
+    min-height: 694px;
+  }
+}
+
+.hero__background-image {
+  min-height: 302px;
+  background-color: rgba(104, 183, 56, 0.85);
+
+  @media (min-width: @desktop-width) {
+    min-height: 694px;
+  }
+}
+
+.hero__title {
+  margin-bottom: 25px;
+
+  @media (min-width: @tablet-width) {
+    max-width: 450px;
+    margin-bottom: 40px;
+  }
+}
+
+.hero__text {
+  text-transform: uppercase;
+}
+
+.hero__button {
+
+}
+
+.hero__image {
+  display: block;
+  width: 100%;
+  max-width: 709px;
+  height: auto;
+  object-fit: cover;
+
+  @media (min-width: @desktop-width) {
+    max-width: 552px;
+    margin: 0 auto;
+  }
+}
