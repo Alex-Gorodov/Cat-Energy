@@ -26,7 +26,7 @@
   @media (min-width: @desktop-width) {
     position: absolute;
     right: 0;
-    top: 0;
+    top: -168px;
     width: 50%;
     background-image: url("../img/index-background-cat-desktop.jpg");
     background-size: cover;
@@ -76,7 +76,11 @@
   object-fit: cover;
 
   @media (min-width: @desktop-width) {
+    position: absolute;
     max-width: 552px;
-    margin: 0 auto;
+    margin: 0px auto;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
   }
 }

@@ -16,12 +16,24 @@
   &--opened {
     top: 65px;
   }
+
+  @media (min-width: @tablet-width) {
+    position: static;
+    flex-direction: row;
+    gap: 35px;
+    background-color: transparent;
+  }
 }
 
 .navigation__item {
   width: 100vw;
   border-top: 1px solid #e6e6e6;
   text-align: center;
+
+  @media (min-width: @tablet-width) {
+    border-top: none;
+    width: auto;
+  }
 }
 
 .navigation__link {
@@ -43,7 +55,12 @@
   }
 
   &--active {
-    text-decoration: underline 2px @main-color;
-    text-underline-offset: 8px;
+    text-decoration: underline 2px;
+    text-underline-offset: 12px;
+  }
+
+  @media (min-width: @desktop-width) {
+    color: @white;
+    font-weight: 400;
   }
 }
