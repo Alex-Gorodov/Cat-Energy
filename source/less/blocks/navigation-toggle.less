@@ -1,8 +1,11 @@
 .navigation-toggle {
   display: flex;
   flex-direction: column;
-  height: 32px;
-  padding: 10px 8px 8px;
+  height: 40px;
+  width: 40px;
+  padding: 0;
+  padding-top: 8px;
+  align-items: center;
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -13,12 +16,11 @@
   width: 24px;
   height: 2px;
   background-color: #000000;
-  transition: 0;
 }
 
 .navigation-toggle__line::before {
   display: block;
-  margin-top: 10px;
+  margin-top: 16px;
   width: 24px;
   height: 2px;
   background-color: #000000;
@@ -28,7 +30,7 @@
 
 .navigation-toggle__line::after {
   display: block;
-  margin-top: -7px;
+  margin-top: -10px;
   width: 24px;
   height: 2px;
   background-color: #000000;
@@ -41,9 +43,9 @@
 }
 
 .navigation-toggle--opened .navigation-toggle__line::before {
-  transform: translate3d(0, -2.5px, 0) rotate(45deg);
+  transform: translate3d(0, -3.5px, 0) rotate(45deg);
 }
 
 .navigation-toggle--opened .navigation-toggle__line::after {
-  transform: translate3d(0, 2.5px, 0) rotate(-45deg);
+  transform: translate3d(0, 4.5px, 0) rotate(-45deg);
 }

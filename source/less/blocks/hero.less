@@ -55,10 +55,17 @@
 
 .hero__text {
   text-transform: uppercase;
+  margin: 0;
+  margin-bottom: 25px;
 }
 
 .hero__button {
+  padding: 0 44px;
 
+  @media (min-width: @tablet-width) {
+    align-self: flex-start;
+    padding: 0 26px;
+  }
 }
 
 .hero__image {
