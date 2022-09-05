@@ -19,17 +19,32 @@
 }
 
 .navigation__item {
-  width: 100%;
-  padding: 22px 0;
+  width: 100vw;
   border-top: 1px solid #E6E6E6;
   text-align: center;
 }
 
 .navigation__link {
+  display: block;
+  padding: 22px 0;
   font-family: @secondary-font;
   color: #000000;
   font-weight: 500;
   font-size: 20px;
   text-decoration: none;
   text-transform: uppercase;
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+
+  &--active {
+    text-decoration: underline 2px @main-color;
+    text-underline-offset: 8px;
+    // border-bottom: 1px solid @main-color;
+  }
 }
