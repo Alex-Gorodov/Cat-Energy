@@ -24,7 +24,7 @@ export const styles = () => {
       csso()
     ]))
     .pipe(rename('style.min.css'))
-    .pipe(gulp.dest('build/css', { sourcemaps: '.' }))
+    .pipe(gulp.dest('docs/css', { sourcemaps: '.' }))
     .pipe(browser.stream());
 }
 
@@ -33,7 +33,7 @@ export const styles = () => {
 const html = () => {
   return gulp.src('source/*.html')
     .pipe(htmlmin({ collapseWhitespace: true }))
-    .pipe(gulp.dest('build'));
+    .pipe(gulp.dest('docs'));
 }
 
 // Scripts
@@ -41,7 +41,7 @@ const html = () => {
 const scripts = () => {
   return gulp.src('source/js/*.js')
     .pipe(terser())
-    .pipe(gulp.dest('build/js'));
+    .pipe(gulp.dest('docs/js'));
 }
 
 // Images
@@ -49,12 +49,12 @@ const scripts = () => {
 const optimizeImages = () => {
   return gulp.src('source/img/**/*.{jpg,png}')
     .pipe(squoosh())
-    .pipe(gulp.dest('build/img'));
+    .pipe(gulp.dest('docs/img'));
 }
 
 const copyImages = () => {
   return gulp.src('source/img/**/*.{jpg,png}')
-    .pipe(gulp.dest('build/img'));
+    .pipe(gulp.dest('docs/img'));
 }
 
 // WebP
@@ -64,7 +64,7 @@ const createWebp = () => {
     .pipe(squoosh( {
       webp: {}
     }))
-    .pipe(gulp.dest('build/img'));
+    .pipe(gulp.dest('docs/img'));
 }
 
 // SVG
@@ -72,7 +72,7 @@ const createWebp = () => {
 const svg = () =>
   gulp.src(['source/img/*.svg', '!source/img/icons/*.svg'])
     .pipe(svgo())
-    .pipe(gulp.dest('build/img'));
+    .pipe(gulp.dest('docs/img'));
 
 const sprite = () => {
   return gulp.src(['source/img/icons/*.svg', 'source/img/*.svg'])
@@ -81,7 +81,7 @@ const sprite = () => {
       inlineSvg: true
     }))
     .pipe(rename('sprite.svg'))
-    .pipe(gulp.dest('build/img'));
+    .pipe(gulp.dest('docs/img'));
 }
 
 // Copy
@@ -94,14 +94,14 @@ const copy = (done) => {
   ], {
     base: 'source'
   })
-    .pipe(gulp.dest('build'));
+    .pipe(gulp.dest('docs'));
   done();
 }
 
 // Clean
 
 const clean = () => {
-  return del('build');
+  return del('docs');
 }
 
 // Server
@@ -109,7 +109,7 @@ const clean = () => {
 const server = (done) => {
   browser.init({
     server: {
-      baseDir: 'build'
+      baseDir: 'docs'
     },
     cors: true,
     notify: false,
