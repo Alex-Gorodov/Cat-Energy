@@ -3,7 +3,7 @@
   font-family: @secondary-font;
   padding: 0;
 
-  @media (max-width: @mobile-width) {
+  @media (max-width: 767px) {
     text-align: center;
     color: @white;
   }
@@ -24,7 +24,7 @@
   background-repeat: no-repeat;
   z-index: -1;
 
-  @media (min-width: 381px) and (max-width: 1439px) {
+  @media (min-width: 767px) and (max-width: 1439px) {
     display: none;
   }
 
@@ -64,13 +64,21 @@
   margin: 0;
   margin-bottom: 25px;
 
+  @media (min-width: 392px) and (max-width: @tablet-width) {
+    margin-bottom: 60px;
+  }
+
   @media (min-width: @tablet-width) {
     margin-bottom: 50px;
   }
 }
 
 .hero__button {
-  padding: 5px 117px;
+  padding: 5px 44px;
+
+  @media (max-width: 767px) {
+    width: 100%;
+  }
 
   @media (min-width: @tablet-width) {
     align-self: flex-start;
@@ -81,9 +89,8 @@
 .hero__image {
   display: block;
   width: 100%;
-  max-width: 709px;
   height: auto;
-  object-fit: cover;
+  object-fit: contain;
 
   @media (min-width: @desktop-width) {
     position: absolute;
