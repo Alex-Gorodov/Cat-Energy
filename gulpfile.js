@@ -12,13 +12,6 @@ import svgo from 'gulp-svgo';
 import svgstore from 'gulp-svgstore';
 import del from 'del';
 import browser from 'browser-sync';
-import deploy from 'gulp-gh-pages';
-
-// Deploy to gh pages
-gulp.task('deploy', function () {
-  return gulp.src("build/**/*")
-    .pipe(deploy());
-});
 
 // Styles
 
@@ -101,7 +94,7 @@ const copy = (done) => {
   ], {
     base: 'source'
   })
-    .pipe(gulp.dest('build'))
+    .pipe(gulp.dest('build'));
   done();
 }
 
@@ -146,7 +139,6 @@ export const build = gulp.series(
   clean,
   copy,
   optimizeImages,
-  deploy,
   gulp.parallel(
     styles,
     html,
