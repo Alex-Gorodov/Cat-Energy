@@ -1,6 +1,7 @@
 .hero {
   position: relative;
   font-family: @secondary-font;
+  padding: 0;
 
   @media (max-width: @mobile-width) {
     text-align: center;
@@ -15,15 +16,15 @@
 .hero__background-wrapper {
   position: absolute;
   top: 0;
-  width: 320px;
-  min-height: 302px;
+  width: 380px;
+  min-height: 362px;
   background-image: url("../img/index-background-cat.jpg");
   background-position: center;
-  background-size: 320px 302px;
+  background-size: 380px 362px;
   background-repeat: no-repeat;
   z-index: -1;
 
-  @media (min-width: 321px) and (max-width: 1439px) {
+  @media (min-width: 381px) and (max-width: 1439px) {
     display: none;
   }
 
@@ -40,7 +41,7 @@
 }
 
 .hero__background-image {
-  min-height: 302px;
+  min-height: 362px;
   background-color: rgba(104, 183, 56, 0.85);
 
   @media (min-width: @desktop-width) {
