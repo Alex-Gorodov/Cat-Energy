@@ -174,9 +174,23 @@
         </li>
       </ul>
       <p class="example__price">Food costs: 15 000 rub.</p>
-      <div class="example__image">
-        <div class="example__image-before"></div>
-        <div class="example__image-after"></div>
+      <div class="example__image-container">
+        <div class="example__image-wrapper">
+          <picture>
+            <source media="(min-width: 768px)" srcset="img/cat-before-tablet@1x.webp 1x, img/cat-before-tablet@2x.webp 2x" type="image/webp">
+            <source srcset="img/cat-before-mobile@1x.webp 1x, img/cat-before-mobile@2x.webp 2x" type="image/webp">
+            <source media="(min-width: 768px)" srcset="img/cat-before-tablet@1x.png 1x, img/cat-before-tablet@2x.png 2x">
+            <img class="example__image example__image--before" href="img/cat-before-mobile@1x.png" width="280" height="256" alt="Cat before diet." srcset="img/cat-before-mobile@1x.png 2x">
+          </picture>
+        </div>
+        <div class="example__image-wrapper">
+          <picture>
+            <source media="(min-width: 768px)" srcset="img/cat-after-tablet@1x.webp 1x, img/cat-after-tablet@2x.webp 2x" type="image/webp">
+            <source srcset="img/cat-after-mobile@1x.webp 1x, img/cat-after-mobile@2x.webp 2x" type="image/webp">
+            <source media="(min-width: 768px)" srcset="img/cat-after-tablet@1x.png 1x, img/cat-after-tablet@2x.png 2x">
+            <img class="example__image example__image--after" href="img/cat-after-mobile@1x.png" width="280" height="256" alt="Cat after diet." srcset="img/cat-after-mobile@1x.png 2x">
+          </picture>
+        </div>
         <button class="example__image-toggler" type="button" aria-label="Сравнить результат.">
           <svg width="40" height="40">
             <use href="img/sprite.svg#toggler-button"></use>

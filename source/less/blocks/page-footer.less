@@ -6,6 +6,17 @@
   align-items: center;
 }
 
+.page-footer__logo {
+  transition: 0.3s;
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}
+
 .page-footer__developer {
   display: flex;
   align-items: center;
@@ -14,12 +25,18 @@
   font-size: 16px;
   color: #444444;
   text-decoration: none;
+  transition: 0.3s;
 
   &:hover svg {
     color: #68b738;
+    transition: 0.3s;
   }
 
   &:active {
     opacity: 0.3;
   }
+}
+
+.page-footer__social {
+  width: 100%;
 }
