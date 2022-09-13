@@ -37,7 +37,7 @@
 }
 
 .navigation__link {
-  display: block;
+  display: inline-block;
   padding: 22px 0;
   font-family: @secondary-font;
   color: #000000;
@@ -56,11 +56,21 @@
   }
 
   &--active {
-    text-decoration: underline 2px @main-color;
-    text-underline-offset: 12px;
+    position: relative;
 
-    @media (min-width: @tablet-width) {
-      text-decoration-color: inherit;
+    &::after {
+      position: absolute;
+      bottom: 10px;
+      left: 0;
+      display: block;
+      height: 2px;
+      width: 100%;
+      background-color: @main-color;
+      content: "";
+
+      @media (min-width: @desktop-width) {
+        background-color: @white;
+      }
     }
   }
 
