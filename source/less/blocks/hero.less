@@ -52,6 +52,11 @@
 
 .hero__content {
   padding: 28px 20px 0;
+
+  @media (min-width: @tablet-width) {
+    align-items: start;
+    padding: 0 110px;
+  }
 }
 
 .hero__title {
@@ -85,8 +90,11 @@
   }
 
   @media (min-width: @tablet-width) {
-    align-self: flex-start;
-    padding: 0 26px;
+    position: absolute;
+    top: 250px;
+    font-size: 20px;
+    line-height: 20px;
+    padding: 14px 54px;
   }
 }
 
