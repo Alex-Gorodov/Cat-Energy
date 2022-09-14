@@ -24,7 +24,7 @@ export const styles = () => {
       csso()
     ]))
     .pipe(rename('style.min.css'))
-    .pipe(gulp.dest('docs/css', { sourcemaps: '.' }))
+    .pipe(gulp.dest('build/css', { sourcemaps: '.' }))
     .pipe(browser.stream());
 }
 
@@ -33,7 +33,7 @@ export const styles = () => {
 const html = () => {
   return gulp.src('source/*.html')
     .pipe(htmlmin({ collapseWhitespace: true }))
-    .pipe(gulp.dest('docs'));
+    .pipe(gulp.dest('build'));
 }
 
 // Scripts
@@ -41,7 +41,7 @@ const html = () => {
 const scripts = () => {
   return gulp.src('source/js/*.js')
     .pipe(terser())
-    .pipe(gulp.dest('docs/js'));
+    .pipe(gulp.dest('build/js'));
 }
 
 // Images
@@ -49,12 +49,12 @@ const scripts = () => {
 const optimizeImages = () => {
   return gulp.src('source/img/**/*.{jpg,png}')
     .pipe(squoosh())
-    .pipe(gulp.dest('docs/img'));
+    .pipe(gulp.dest('build/img'));
 }
 
 const copyImages = () => {
   return gulp.src('source/img/**/*.{jpg,png}')
-    .pipe(gulp.dest('docs/img'));
+    .pipe(gulp.dest('build/img'));
 }
 
 // WebP
@@ -64,7 +64,7 @@ const createWebp = () => {
     .pipe(squoosh( {
       webp: {}
     }))
-    .pipe(gulp.dest('docs/img'));
+    .pipe(gulp.dest('build/img'));
 }
 
 // SVG
@@ -72,7 +72,7 @@ const createWebp = () => {
 const svg = () =>
   gulp.src(['source/img/*.svg', '!source/img/icons/*.svg'])
     .pipe(svgo())
-    .pipe(gulp.dest('docs/img'));
+    .pipe(gulp.dest('build/img'));
 
 const sprite = () => {
   return gulp.src(['source/img/icons/*.svg', 'source/img/*.svg'])
@@ -81,7 +81,7 @@ const sprite = () => {
       inlineSvg: true
     }))
     .pipe(rename('sprite.svg'))
-    .pipe(gulp.dest('docs/img'));
+    .pipe(gulp.dest('build/img'));
 }
 
 // Copy
@@ -94,14 +94,14 @@ const copy = (done) => {
   ], {
     base: 'source'
   })
-    .pipe(gulp.dest('docs'));
+    .pipe(gulp.dest('build'));
   done();
 }
 
 // Clean
 
 const clean = () => {
-  return del('docs');
+  return del('build');
 }
 
 // Server
@@ -109,7 +109,7 @@ const clean = () => {
 const server = (done) => {
   browser.init({
     server: {
-      baseDir: 'docs'
+      baseDir: 'build'
     },
     cors: true,
     notify: false,
@@ -152,17 +152,7 @@ export const build = gulp.series(
 // Default
 
 export default gulp.series(
-  clean,
-  copy,
-  copyImages,
-  gulp.parallel(
-    html,
-    styles,
-    svg,
-    sprite,
-    scripts,
-    createWebp
-  ),
+  build,
   gulp.series (
     server,
     watcher
