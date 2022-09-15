@@ -1,9 +1,15 @@
 .contact {
+  position: relative;
   padding: 0;
 }
 
 .contact__map {
+  display: block;
   width: 100%;
+  background-image: url("../img/map.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 
   @media (min-width: @tablet-width) {
     height: 400px;
@@ -20,6 +26,15 @@
   @media (min-width: @tablet-width) {
     padding: 60px 70px;
     gap: 300px;
+  }
+
+  @media (min-width: @desktop-width) {
+    position: absolute;
+    top: 95px;
+    left: 110px;
+    gap: 0;
+    max-width: 425px;
+    background-color: @white;
   }
 }
 
