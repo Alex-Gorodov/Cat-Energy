@@ -1,3 +1,11 @@
+.section {
+  padding: 25px 20px 40px;
+
+  @media (min-width: @tablet-width) {
+    padding: 20px 30px 45px;
+  }
+}
+
 .section__content {
   position: relative;
   display: flex;
@@ -20,6 +28,10 @@
   font-weight: 400;
   font-size: 36px;
   line-height: 40px;
+
+  @media (min-width: @tablet-width) {
+    margin: 45px 0 75px;
+  }
 }
 
 .section__text {
