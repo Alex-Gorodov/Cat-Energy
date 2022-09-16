@@ -6,11 +6,22 @@
   border: none;
   border-bottom: 1px solid #d9d9d9;
 
+  @media (min-width: @tablet-width) {
+    padding: 20px 50px;
+    border-bottom: none;
+  }
+
   &--radio {
     padding: 25px;
     row-gap: 10px;
 
     @media (min-width: @tablet-width) {
+      margin: 50px;
+      border: 1px solid #cdcdcd;
+    }
+
+    @media (min-width: @desktop-width) {
+      margin: 50px 90px;
       border: 1px solid #cdcdcd;
     }
   }
@@ -18,9 +29,17 @@
   &--bordered {
     border-top: 2px solid @main-color;
   }
+
+
+  @media (min-width: @desktop-width) {
+    padding: 20px 90px;
+  }
 }
 
 .form__fieldset-item {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
   font-family: @secondary-font;
   font-size: 16px;
   line-height: 18px;
@@ -29,6 +48,7 @@
 }
 
 .form__fieldset-input {
+  width: fill-available;
   margin-left: 10px;
   padding: 13px 16px;
   border: 1px solid #e7e7e7;
@@ -38,10 +58,19 @@
 }
 
 .form__legend {
+  width: max-content;
   padding: 20px;
-  padding-right: 0;
+  padding-right: 20px;
   margin-left: -20px;
   font-family: @secondary-font;
   font-size: 28px;
   line-height: 28px;
+
+  @media (min-width: @tablet-width) {
+    padding: 20px 40px;
+
+    br {
+      display: none;
+    }
+  }
 }
