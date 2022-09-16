@@ -16,7 +16,7 @@
 </head>
 <body class="page">
   <header class="page__header page-header">
-    <a href="#" class="page-header__logo logo" aria-label="Go to Main page">
+    <a href="index.html" class="page-header__logo logo" aria-label="Go to Main page">
       <p class="logo__cat"></p>
       <svg class="logo__text" width="101" height="18" viewBox="0 0 101 18" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g clip-path="url(#clip0_135_3354)">
@@ -43,140 +43,62 @@
       </button>
       <ul class="navigation__list">
         <li class="navigation__item">
-          <a href="#" class="navigation__link navigation__link--active">Home</a>
+          <a href="index.html" class="navigation__link navigation__link--secondary">Home</a>
         </li>
         <li class="navigation__item">
-          <a href="catalog.html" class="navigation__link">Product Catalog</a>
+          <a href="catalog.html" class="navigation__link navigation__link--secondary">Product Catalog</a>
         </li>
         <li class="navigation__item">
-          <a href="form.html" class="navigation__link">Select the program</a>
+          <a href="#" class="navigation__link navigation__link--secondary navigation__link--active">Select the program</a>
         </li>
       </ul>
     </nav>
   </header>
   <main class="page__main page-main">
-    <h1 class="visually-hidden">Cat Energy - Make a power program for your pet!</h1>
-    <section class="page-main__section section hero">
-      <div class="section__content hero__content">
-        <h2 class="hero__title title">Functional nutrition for cats</h2>
-        <p class="hero__text text">Took care of yourself? Take care of a cat!</p>
-        <picture>
-          <source media="(min-width: 1440px)" srcset="img/index-can.webp 1x, img/index-can@2x.webp 2x" type="image/webp">
-          <source media="(min-width: 768px)" srcset="img/index-can-tablet.webp 1x, img/index-can-tablet@2x.webp 2x" type="image/webp">
-          <source srcset="img/index-can-mobile.webp 1x, img/index-can-mobile@2x.webp 2x" type="image/webp">
-          <source media="(min-width: 1440px)" srcset="img/index-can.png 1x, img/index-can@2x.png 2x" type="image/png">
-          <source media="(min-width: 768px)" srcset="img/index-can-tablet.png 1x, img/index-can-tablet@2x.png 2x" type="image/png">
-          <img class="hero__image" src="img/index-can-mobile.png" width="280" height="270" alt="Cat Energy - Feed with chicken" srcset="img/index-can-mobile@2x.png 2x">
-        </picture>
-        <a class="hero__button button" href="form.html">Pick the program</a>
+    <h1 class="visually-hidden">Choose the nutrition program for your cat.</h1>
+    <section class="">
+      <div class="page-main__section">
+        <h2 class="title">Select the program</h2>
+        <p class="text text--secondary">Fill out the questionnaire and we will select food program for your cat</p>
       </div>
-      <div class="hero__background-wrapper">
-        <div class="hero__background-image"></div>
-      </div>
+      <form class="form" action="https://echo.htmlacademy.ru/" method="post" target="_blank">
+        <fieldset class="form__fieldset">
+          <label for="name" class="form__fieldset-item">
+            Name:*
+            <input class="form__fieldset-input" type="text" id="name" value="Barsik" required>
+          </label>
+          <label for="weight" class="form__fieldset-item">
+            Weight (kg):*
+            <input class="form__fieldset-input" type="number" id="weight" value="7" required>
+          </label>
+          <label for="age" class="form__fieldset-item">
+            Age (years):
+            <input class="form__fieldset-input" type="number" id="age" value="7">
+          </label>
+        </fieldset>
+        <fieldset class="form__fieldset form__fieldset--radio">
+          <label for="lose" class="form__fieldset-item radio">
+            <input type="radio" class="visually-hidden radio__hidden" id="lose" value="lose" name="program" checked>
+            <span class="radio__custom"></span>
+            <span class="radio__text">Weight losing</span>
+          </label>
+          <label for="gain" class="form__fieldset-item radio">
+            <input type="radio" class="visually-hidden radio__hidden" id="gain" value="gain" name="program">
+            <span class="radio__custom"></span>
+            <span class="radio__text">Weight gain</span>
+          </label>
+          <label for="help" class="form__fieldset-item radio">
+            <input type="radio" class="visually-hidden radio__hidden" id="help" value="help" name="program">
+            <span class="radio__custom"></span>
+            <span class="radio__text">IDK (help me)</span>
+          </label>
+        </fieldset>
+        <fieldset class="form__fieldset form__fieldset--bordered">
+          <legend class="form__legend">Contact information (cat&nbsp;owner)</legend>
+        </fieldset>
+      </form>
     </section>
-    <section class="page-main__section section target">
-      <div class="section__content">
-        <h2 class="visually-hidden">The choice of the program</h2>
-        <ul class="target__list">
-          <li class="target__item">
-            <p class="target__illustration">
-              <svg class="target__icon" width="36" height="50" fill="currentColor">
-                <use href="img/sprite.svg#weight-down"></use>
-              </svg>
-            </p>
-            <h3 class="target__title title">Weight losing</h3>
-            <p class="section__text target__text text">Does your cat weigh more dogs and almost lost the ability to climb trees? It's time for a diet! Cat Energy Slim will help your pet lose weight.</p>
-            <a href="#" class="target__button">Catalog slim</a>
-          </li>
-          <li class="target__item">
-            <p class="target__illustration">
-              <svg class="target__icon" width="67" height="28" fill="currentColor">
-                <use href="img/sprite.svg#weight-up"></use>
-              </svg>
-            </p>
-            <h3 class="target__title title">Gain mass</h3>
-            <p class="section__text target__text text">Earn authority among yard cats and even dogs? The Cat Energy Pro series will help your cat build up the necessary muscles!</p>
-            <a href="#" class="target__button">Catalog pro</a>
-          </li>
-        </ul>
-      </div>
-    </section>
-    <section class="page-main__section section about">
-      <h2 class="section__title title">How it works</h2>
-      <ul class="about__list">
-        <li class="about__item">
-          <div class="about__icon-wrapper">
-            <svg class="about__icon" width="30" height="32">
-              <use href="img/sprite.svg#icon_leaf"></use>
-            </svg>
-          </div>
-          <p class="about__text section__text text">Functional nutrition contains only beneficial nutrients.</p>
-        </li>
-        <li class="about__item">
-          <div class="about__icon-wrapper">
-            <img src="img/icon_tub.svg" width="30" height="31" alt="tub">
-          </div>
-          <p class="about__text section__text text">It is produced in the form of a powder, which only needs to be poured with boiling water and ready.</p>
-        </li>
-        <li class="about__item">
-          <div class="about__icon-wrapper">
-            <svg class="about__icon" width="25" height="30">
-              <use href="img/sprite.svg#icon_eat"></use>
-            </svg>
-          </div>
-          <p class="about__text section__text text">Replace one or two intake of ordinary food with our functional nutrition.</p>
-        </li>
-        <li class="about__item">
-          <div class="about__icon-wrapper">
-            <img src="img/icon_alarm.svg" width="32" height="33" alt="alarm">
-          </div>
-          <p class="about__text section__text text">In a month, enjoy the changes for the better of your pet!</p>
-        </li>
-      </ul>
-    </section>
-    <section class="page-main__section section example">
-      <div>
-        <h2 class="section__title example__title title">Example</h2>
-        <p class="section__text example__text text">Boris dropped 5 kg in 2 months, simply replacing his usual food with Cat Energy Slim. Great result without exhausting training! At the same time, he did not change his habits and still sleeps 16 hours a day.</p>
-        <div class="example__data">
-          <dl class="example__list">
-            <div class="example__item">
-              <dd class="example__item-description">5 kg</dd>
-              <dt class="example__item-term">Weight losing</dt>
-            </div>
-            <div class="example__item">
-              <dd class="example__item-description">60 days</dd>
-              <dt class="example__item-term">Spended time</dt>
-            </div>
-          </dl>
-          <p class="example__price"><span>Food costs:</span><br>&nbsp;15 000 rub.</p>
-        </div>
-      </div>
-      <div class="example__image-container">
-        <div class="example__image-wrapper">
-          <picture>
-            <source media="(min-width: 768px)" srcset="img/cat-before-tablet@1x.webp 1x, img/cat-before-tablet@2x.webp 2x" type="image/webp">
-            <source srcset="img/cat-before-mobile@1x.webp 1x, img/cat-before-mobile@2x.webp 2x" type="image/webp">
-            <source media="(min-width: 768px)" srcset="img/cat-before-tablet@1x.png 1x, img/cat-before-tablet@2x.png 2x">
-            <img class="example__image example__image--before" href="img/cat-before-mobile@1x.png" width="280" height="256" alt="Cat before diet." srcset="img/cat-before-mobile@1x.png 2x">
-          </picture>
-        </div>
-        <div class="example__image-wrapper">
-          <picture>
-            <source media="(min-width: 768px)" srcset="img/cat-after-tablet@1x.webp 1x, img/cat-after-tablet@2x.webp 2x" type="image/webp">
-            <source srcset="img/cat-after-mobile@1x.webp 1x, img/cat-after-mobile@2x.webp 2x" type="image/webp">
-            <source media="(min-width: 768px)" srcset="img/cat-after-tablet@1x.png 1x, img/cat-after-tablet@2x.png 2x">
-            <img class="example__image example__image--after" href="img/cat-after-mobile@1x.png" width="280" height="256" alt="Cat after diet." srcset="img/cat-after-mobile@1x.png 2x">
-          </picture>
-        </div>
-        <button class="example__image-toggler" type="button" aria-label="Сравнить результат.">
-          <svg width="40" height="40">
-            <use href="img/sprite.svg#toggler-button"></use>
-          </svg>
-        </button>
-      </div>
-    </section>
-    <section class="page-main__section section contact">
+    <section class="page-main__section section contact contact--secondary">
       <h2 class="visually-hidden">Contact us!</h2>
       <div class="contact__intro">
         <p class="contact__title title">We invite dealers to cooperate!</p>
@@ -185,7 +107,7 @@
       <iframe class="contact__map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.6037872533248!2d30.320858716224457!3d59.93871648187619!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca145cc1%3A0x42b32648d8238007!2z0JHQvtC70YzRiNCw0Y8g0JrQvtC90Y7RiNC10L3QvdCw0Y8g0YPQuy4sIDE5LzgsINCh0LDQvdC60YIt0J_QtdGC0LXRgNCx0YPRgNCzLCDQoNC-0YHRgdC40Y8sIDE5MTE4Ng!5e0!3m2!1sru!2sil!4v1662309237295!5m2!1sru!2sil" title="Cat Energy на карте." width="320" height="362" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </section>
   </main>
-  <footer class="page__footer page-footer">
+  <footer class="page__footer page-footer page-footer--secondary">
     <a href="#" class="page-footer__logo" aria-label="Go to Main page.">
       <svg width="101" height="18" viewBox="0 0 101 18" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g clip-path="url(#clip0_135_3354)">

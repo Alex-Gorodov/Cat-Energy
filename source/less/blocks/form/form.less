@@ -1,0 +1,51 @@
+.form {
+
+}
+
+.form__fieldset {
+  display: flex;
+  row-gap: 20px;
+  padding: 20px;
+  flex-direction: column;
+  border: none;
+  border-bottom: 1px solid #d9d9d9;
+
+  &--radio {
+    padding: 25px;
+    row-gap: 10px;
+
+    @media (min-width: @tablet-width) {
+      border: 1px solid #cdcdcd;
+    }
+  }
+
+  &--bordered {
+    border-top: 2px solid @main-color;
+  }
+}
+
+.form__fieldset-item {
+  font-family: @secondary-font;
+  font-size: 16px;
+  line-height: 18px;
+  color: #444444;
+  text-transform: uppercase;
+}
+
+.form__fieldset-input {
+  margin-left: 10px;
+  padding: 13px 16px;
+  border: 1px solid #e7e7e7;
+
+  font-family: @secondary-font;
+  text-transform: uppercase;
+}
+
+.form__legend {
+  padding: 20px;
+  padding-right: 0;
+  margin-left: -20px;
+  font-family: @secondary-font;
+  font-size: 28px;
+  line-height: 28px;
+}

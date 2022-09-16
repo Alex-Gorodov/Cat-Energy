@@ -59,7 +59,7 @@
 
     &::after {
       position: absolute;
-      bottom: 10px;
+      bottom: 12px;
       left: 0;
       display: block;
       height: 2px;
@@ -76,5 +76,13 @@
   @media (min-width: @desktop-width) {
     color: @white;
     font-weight: 400;
+  }
+
+  &--secondary {
+    color: #000000;
+
+    &::after {
+      background-color: @main-color;
+    }
   }
 }
