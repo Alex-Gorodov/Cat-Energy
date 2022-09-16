@@ -25,6 +25,7 @@
 
   @media (min-width: @desktop-width) {
     grid-template-columns: repeat(4, 1fr);
+    column-gap: 100px;
     padding-bottom: 0;
   }
 }
@@ -52,6 +53,12 @@
       counter-increment: about;
       content: counter(about);
       z-index: -1;
+    }
+  }
+
+  @media (min-width: @desktop-width) {
+    &::after {
+      left: 113px;
     }
   }
 }
