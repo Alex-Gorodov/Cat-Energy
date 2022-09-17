@@ -1,0 +1,14 @@
+{
+  "name": "Cat Energy - Nutrition",
+  "short_name": "Cat Energy",
+  "start_url": ".",
+  "display": "standalone",
+  "prefer_related_applications": true,
+  "background_color": "#ffffff",
+  "theme_color": "#68B738",
+  "description": "Building a nutrition progarm to ypur cat.",
+  "icons": [
+    { "src": "img/favicons/192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "img/favicons/512.png", "type": "image/png", "sizes": "512x512" }
+  ]
+}
