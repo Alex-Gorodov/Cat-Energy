@@ -112,33 +112,36 @@
         </fieldset>
         <fieldset class="form__fieldset form__fieldset--bordered">
           <legend class="form__legend">Comment</legend>
-          <textarea class="form__fieldset-input form__fieldset-input--textarea" name="comment" id="" rows="5" placeholder="Расскажите обо всех повадках кота"></textarea>
+          <textarea class="form__fieldset-input form__fieldset-input--textarea" name="comment" id="" rows="5" placeholder="Tell us about all the habits of the cat"></textarea>
         </fieldset>
         <fieldset class="form__fieldset form__fieldset--bordered">
           <legend class="form__legend">Additional</legend>
-          <label class="form__fieldset-item checkbox" for="sweetener">
-            <input class="visually-hidden checkbox__hidden" id="sweetener" type="checkbox" checked>
-            <span class="checkbox__custom"></span>
-            <span class="checkbox__text">Sweetener</span>
-          </label>
-          <label class="form__fieldset-item checkbox" for="water">
-            <input class="visually-hidden checkbox__hidden" id="water" type="checkbox">
-            <span class="checkbox__custom"></span>
-            <span class="checkbox__text">Drink water</span>
-          </label>
-          <label class="form__fieldset-item checkbox" for="milk">
-            <input class="visually-hidden checkbox__hidden" id="milk" type="checkbox">
-            <span class="checkbox__custom"></span>
-            <span class="checkbox__text">Milk</span>
-          </label>
-          <label class="form__fieldset-item checkbox" for="vitamins">
-            <input class="visually-hidden checkbox__hidden" id="vitamins" type="checkbox">
-            <span class="checkbox__custom"></span>
-            <span class="checkbox__text">Vitamins</span>
-          </label>
+          <div class="form__fieldset-checkboxes">
+            <label class="form__fieldset-item checkbox" for="sweetener">
+              <input class="visually-hidden checkbox__hidden" id="sweetener" type="checkbox" checked>
+              <span class="checkbox__custom"></span>
+              <span class="checkbox__text">Sweetener</span>
+            </label>
+            <label class="form__fieldset-item checkbox" for="water">
+              <input class="visually-hidden checkbox__hidden" id="water" type="checkbox">
+              <span class="checkbox__custom"></span>
+              <span class="checkbox__text">Drink water</span>
+            </label>
+            <label class="form__fieldset-item checkbox" for="milk">
+              <input class="visually-hidden checkbox__hidden" id="milk" type="checkbox">
+              <span class="checkbox__custom"></span>
+              <span class="checkbox__text">Milk</span>
+            </label>
+            <label class="form__fieldset-item checkbox" for="vitamins">
+              <input class="visually-hidden checkbox__hidden" id="vitamins" type="checkbox">
+              <span class="checkbox__custom"></span>
+              <span class="checkbox__text">Vitamins</span>
+            </label>
+          </div>
         </fieldset>
         <div class="form__inner-wrapper">
           <button class="form__button button" type="submit">Send an application</button>
+          <p class="form__note">* — Required fields</p>
         </div>
       </form>
     </section>
