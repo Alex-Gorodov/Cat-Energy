@@ -62,78 +62,86 @@
         <p class="text text--secondary">Fill out the questionnaire and we will select food program for your cat</p>
       </div>
       <form class="form" action="https://echo.htmlacademy.ru/" method="post" target="_blank">
-        <fieldset class="form__fieldset">
-          <label for="name" class="form__fieldset-item">
-            Name:*
-            <input class="form__fieldset-input" type="text" id="name" value="Barsik" required>
-          </label>
-          <label for="weight" class="form__fieldset-item">
-            Weight (kg):*
-            <input class="form__fieldset-input" type="number" id="weight" value="7" required>
-          </label>
-          <label for="age" class="form__fieldset-item">
-            Age (years):
-            <input class="form__fieldset-input" type="number" id="age" value="7">
-          </label>
+        <fieldset class="form__fieldset form__fieldset--cat-info">
+          <div class="form__fieldset-wrapper">
+            <label for="name" class="form__fieldset-item">
+              Name:*
+              <input class="form__fieldset-input" type="text" id="name" value="Barsik" name="Cat name" required>
+            </label>
+            <label for="weight" class="form__fieldset-item">
+              Weight (kg):*
+              <input class="form__fieldset-input" type="number" id="weight" value="7" name="Cat weight" required>
+            </label>
+            <label for="age" class="form__fieldset-item">
+              Age (years):
+              <input class="form__fieldset-input" type="number" id="age" value="7" name="Cat age">
+            </label>
+          </div>
         </fieldset>
-        <fieldset class="form__fieldset form__fieldset--radio">
-          <label for="lose" class="form__fieldset-item radio">
-            <input type="radio" class="visually-hidden radio__hidden" id="lose" value="lose" name="program" checked>
-            <span class="radio__custom"></span>
-            <span class="radio__text">Weight losing</span>
-          </label>
-          <label for="gain" class="form__fieldset-item radio">
-            <input type="radio" class="visually-hidden radio__hidden" id="gain" value="gain" name="program">
-            <span class="radio__custom"></span>
-            <span class="radio__text">Weight gain</span>
-          </label>
-          <label for="help" class="form__fieldset-item radio">
-            <input type="radio" class="visually-hidden radio__hidden" id="help" value="help" name="program">
-            <span class="radio__custom"></span>
-            <span class="radio__text">IDK (help me)</span>
-          </label>
+        <fieldset class="form__fieldset form__fieldset--target">
+          <div class="form__fieldset-wrapper form__fieldset-wrapper--radio">
+            <label for="lose" class="form__fieldset-item radio">
+              <input type="radio" class="visually-hidden radio__hidden" id="lose" value="weight losing" name="Choosen program" checked>
+              <span class="radio__custom"></span>
+              <span class="radio__text">Weight losing</span>
+            </label>
+            <label for="gain" class="form__fieldset-item radio">
+              <input type="radio" class="visually-hidden radio__hidden" id="gain" value="weight gain" name="Choosen program">
+              <span class="radio__custom"></span>
+              <span class="radio__text">Weight gain</span>
+            </label>
+            <label for="help" class="form__fieldset-item radio">
+              <input type="radio" class="visually-hidden radio__hidden" id="help" value="need help" name="Choosen program">
+              <span class="radio__custom"></span>
+              <span class="radio__text">IDK (help me)</span>
+            </label>
+          </div>
         </fieldset>
         <fieldset class="form__fieldset form__fieldset--bordered">
           <legend class="form__legend">Contact information<br> (cat&nbsp;owner)</legend>
-          <label for="email" class="form__fieldset-item">
-            E-mail:*
-            <input type="email" id="email" class="form__fieldset-input">
-            <svg class="form__icon" width="20" height="14" fill="currentColor">
-              <use href="img/sprite.svg#email"></use>
-            </svg>
-          </label>
-          <label for="tel" class="form__fieldset-item">
-            Phone:*
-            <input type="tel" id="tel" class="form__fieldset-input">
-            <svg class="form__icon" width="20" height="20" fill="currentColor">
-              <use href="img/sprite.svg#phone"></use>
-            </svg>
-          </label>
+          <div class="form__fieldset-wrapper form__fieldset-wrapper--owner">
+            <label for="email" class="form__fieldset-item">
+              E-mail:*
+              <input class="form__fieldset-input" type="email" id="email" name="E-mail" required>
+              <svg class="form__icon" width="20" height="14" fill="currentColor">
+                <use href="img/sprite.svg#email"></use>
+              </svg>
+            </label>
+            <label for="tel" class="form__fieldset-item">
+              Phone:*
+              <input class="form__fieldset-input" type="tel" id="tel" name="Telephone" required>
+              <svg class="form__icon" width="20" height="20" fill="currentColor">
+                <use href="img/sprite.svg#phone"></use>
+              </svg>
+            </label>
+          </div>
         </fieldset>
         <fieldset class="form__fieldset form__fieldset--bordered">
           <legend class="form__legend">Comment</legend>
-          <textarea class="form__fieldset-input form__fieldset-input--textarea" name="comment" id="" rows="5" placeholder="Tell us about all the habits of the cat"></textarea>
+          <div class="form__fieldset-wrapper">
+            <textarea class="form__fieldset-input form__fieldset-input--textarea" name="comment" id="" rows="5" placeholder="Tell us about all the habits of the cat"></textarea>
+          </div>
         </fieldset>
         <fieldset class="form__fieldset form__fieldset--bordered">
           <legend class="form__legend">Additional</legend>
-          <div class="form__fieldset-checkboxes">
+          <div class="form__fieldset-wrapper form__fieldset-wrapper--checkboxes">
             <label class="form__fieldset-item checkbox" for="sweetener">
-              <input class="visually-hidden checkbox__hidden" id="sweetener" type="checkbox" checked>
+              <input class="visually-hidden checkbox__hidden" id="sweetener" type="checkbox" name="Sweetener" checked>
               <span class="checkbox__custom"></span>
               <span class="checkbox__text">Sweetener</span>
             </label>
             <label class="form__fieldset-item checkbox" for="water">
-              <input class="visually-hidden checkbox__hidden" id="water" type="checkbox">
+              <input class="visually-hidden checkbox__hidden" id="water" type="checkbox" name="Water">
               <span class="checkbox__custom"></span>
               <span class="checkbox__text">Drink water</span>
             </label>
             <label class="form__fieldset-item checkbox" for="milk">
-              <input class="visually-hidden checkbox__hidden" id="milk" type="checkbox">
+              <input class="visually-hidden checkbox__hidden" id="milk" type="checkbox" name="Milk">
               <span class="checkbox__custom"></span>
               <span class="checkbox__text">Milk</span>
             </label>
             <label class="form__fieldset-item checkbox" for="vitamins">
-              <input class="visually-hidden checkbox__hidden" id="vitamins" type="checkbox">
+              <input class="visually-hidden checkbox__hidden" id="vitamins" type="checkbox" name="Vitamins">
               <span class="checkbox__custom"></span>
               <span class="checkbox__text">Vitamins</span>
             </label>

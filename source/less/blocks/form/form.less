@@ -1,8 +1,15 @@
+.form {
+  display: grid;
+
+  @media (min-width: @desktop-width) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 .form__fieldset {
-  display: flex;
-  row-gap: 20px;
+  display: grid;
   padding: 20px;
-  flex-direction: column;
+  margin: 0;
   border: none;
   border-bottom: 1px solid #d9d9d9;
 
@@ -11,43 +18,72 @@
     border-bottom: none;
   }
 
+  &--bordered {
+    border-top: 2px solid @main-color;
+    border-bottom: none;
+
+    @media (min-width: @desktop-width) {
+      grid-column: 1 / -1;
+    }
+  }
+
+  @media (min-width: @desktop-width) {
+    padding: 20px 90px;
+  }
+
+  &--cat-info {
+    @media (min-width: @desktop-width) {
+      padding-right: 20px;
+    }
+  }
+
+  &--target {
+    @media (min-width: @desktop-width) {
+      padding-left: 20px;
+    }
+  }
+}
+
+.form__fieldset-wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+
+  @media (min-width: @tablet-width) {
+    padding: 0 20px;
+  }
+
+  &--owner {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 80px;
+  }
+
+  &--checkboxes {
+    @media (min-width: @tablet-width) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 32px;
+      margin-bottom: 54px;
+    }
+
+    @media (min-width: @desktop-width) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
   &--radio {
     padding: 25px;
     row-gap: 10px;
 
     @media (min-width: @tablet-width) {
-      margin: 50px;
-      border: 1px solid #cdcdcd;
+      border: 1px solid #e7e7e7;
+      margin: 0 20px;
     }
 
     @media (min-width: @desktop-width) {
-      margin: 50px 90px;
-      border: 1px solid #cdcdcd;
+      row-gap: 18px;
     }
-  }
-
-  &--bordered {
-    border-top: 2px solid @main-color;
-    border-bottom: none;
-  }
-
-
-  @media (min-width: @desktop-width) {
-    padding: 20px 90px;
-  }
-}
-
-.form__fieldset-checkboxes {
-  @media (min-width: @tablet-width) {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    row-gap: 32px;
-    margin-bottom: 54px;
-  }
-
-  @media (min-width: @desktop-width) {
-    grid-template-columns: repeat(4, 1fr);
-    padding: 0 20px;
   }
 }
 
@@ -118,6 +154,7 @@
   }
 
   @media (min-width: @desktop-width) {
+    grid-column: 1 / -1;
     justify-content: start;
     padding: 0 110px;
     margin-bottom: 80px;
