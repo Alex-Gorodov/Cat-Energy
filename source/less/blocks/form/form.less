@@ -28,6 +28,7 @@
 
   &--bordered {
     border-top: 2px solid @main-color;
+    border-bottom: none;
   }
 
 
@@ -84,5 +85,18 @@
     br {
       display: none;
     }
+  }
+}
+
+.form__inner-wrapper {
+  padding: 0 20px;
+}
+
+.form__button {
+  padding: 5px 0;
+  text-decoration: none;
+
+  @media (max-width: 767px) {
+    width: 100%;
   }
 }
