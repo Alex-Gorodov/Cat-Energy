@@ -37,6 +37,7 @@
 }
 
 .form__fieldset-item {
+  position: relative;
   display: flex;
   align-items: center;
   white-space: nowrap;
@@ -55,6 +56,17 @@
 
   font-family: @secondary-font;
   text-transform: uppercase;
+
+  &--textarea {
+    margin-left: 0;
+  }
+}
+
+.form__icon {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
 }
 
 .form__legend {
