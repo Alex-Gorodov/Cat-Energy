@@ -1,17 +1,25 @@
 .catalog {
-
+  padding: 0;
 }
 
 .catalog__list {
   display: grid;
   grid-template-columns: 1fr;
   list-style-type: none;
+  padding: 0;
 
   @media (min-width: @tablet-width) {
+    column-gap: 60px;
+    row-gap: 140px;
+    padding: 0 30px;
+    padding-top: 140px;
     grid-template-columns: repeat(2, 1fr);
   }
-}
 
-.catalog__item {
-
+  @media (min-width: @desktop-width) {
+    column-gap: 80px;
+    padding: 0 110px;
+    padding-top: 140px;
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
