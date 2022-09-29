@@ -1,0 +1,19 @@
+.catalog-additional__title {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    display: block;
+    height: 2px;
+    width: 80%;
+    background-color: @main-color;
+    transform: translateY(2px);
+    content: "";
+
+    @media (min-width: @tablet-width) {
+      left: 35%;
+    }
+  }
+}

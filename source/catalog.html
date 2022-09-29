@@ -230,9 +230,19 @@
           <button class="button catalog-item__button" type="button">Order</button>
         </li>
         <li class="catalog__item catalog-item catalog-item--new">
-          <p class="catalog-item__name"></p>
+          <div class="catalog-item__wrapper">
+            <svg class="catalog-item__icon-plus" width="30" height="30" fill="currentColor">
+              <use href="img/sprite.svg#plus-icon"></use>
+            </svg>
+            <p class="catalog-item__name catalog-item__name--new">Show another 100500 items</p>
+            <span>In fact, there are much more tastes!</span>
+          </div>
+          <button class="button catalog-item__button catalog-item__button--new" type="button">Show all</button>
         </li>
       </ul>
+    </section>
+    <section class="page-main__section section catalog-additional">
+      <h2 class="title page-main__title catalog-additional__title">Additional items</h2>
     </section>
     <section class="page-main__section section contact contact--secondary">
       <h2 class="visually-hidden">Contact us!</h2>
