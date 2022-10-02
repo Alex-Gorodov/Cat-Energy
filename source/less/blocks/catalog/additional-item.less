@@ -11,24 +11,48 @@
   @media (min-width: @tablet-width) {
     padding: 20px 40px;
   }
+
+  @media (min-width: @desktop-width) {
+    display: grid;
+    width: 100%;
+    padding: 20px 0;
+    grid-template-columns: 3fr 1fr;
+
+  }
 }
 
 .additional-item__description {
   display: grid;
   margin-top: 0;
   grid-template-columns: 1.3fr 0.8fr 0.4fr;
+  align-items: center;
+
+  @media (min-width: @desktop-width) {
+    margin: 0;
+  }
 }
 
 .additional-item__name {
+  color: #444444;
   font-size: 20px;
   line-height: 20px;
   font-family: @secondary-font;
 }
 
 .additional-item__volume {
+  color: #444444;
   justify-self: end;
+
+  @media (min-width: @desktop-width) {
+    justify-self: start;
+  }
 }
 
 .additional-item__price {
+  color: #444444;
   justify-self: end;
+
+  @media (min-width: @desktop-width) {
+    justify-self: start;
+  }
 }
