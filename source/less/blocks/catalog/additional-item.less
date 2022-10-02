@@ -1,0 +1,30 @@
+.additional-item {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 40px;
+  border-bottom: 2px solid #cdcdcd;
+
+  &--first {
+    border-top: 2px solid #cdcdcd;
+  }
+}
+
+.additional-item__description {
+  display: grid;
+  margin-top: 0;
+  grid-template-columns: 1.3fr 0.8fr 0.4fr;
+}
+
+.additional-item__name {
+  font-size: 20px;
+  line-height: 20px;
+  font-family: @secondary-font;
+}
+
+.additional-item__volume {
+  justify-self: end;
+}
+
+.additional-item__price {
+  justify-self: end;
+}
