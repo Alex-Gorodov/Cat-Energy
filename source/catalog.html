@@ -277,6 +277,20 @@
           <button class="button additional-item__button">Order</button>
         </li>
       </ul>
+      <div class="catalog-additional__picture-wrapper">
+        <picture>
+          <source media="(min-width: 768px)" srcset="img/catalog/cat-bag-tablet.webp 1x, img/catalog/cat-bag-tablet@2x.webp 2x" type="image/webp">
+          <source media="(min-width: 768px)" srcset="img/catalog/cat-bag-tablet.jpg 1x, img/catalog/cat-bag-tablet@2x.jpg 2x">
+          <source srcset="img/catalog/cat-bag-mobile.webp 1x, img/catalog/cat-bag-mobile@2x.webp 2x" type="image/webp">
+          <img src="img/catalog/cat-bag-mobile.jpg" width="279" height="289" alt="Bag for cat" class="catalog-additional__picture" srcset="img/catalog/cat-bag-mobile@2x.jpg 2x">
+        </picture>
+        <div class="catalog-additional__picture-green">
+          <svg class="catalog-additional__picture-gift" width="78" height="80" fill="currentColor">
+            <use href="img/sprite.svg#icon_gift"></use>
+          </svg>
+          <p class="catalog-additional__picture-text">Закажите все и получите чехол для кота в подарок!</p>
+        </div>
+      </div>
     </section>
     <section class="page-main__section section contact contact--secondary">
       <h2 class="visually-hidden">Contact us!</h2>
