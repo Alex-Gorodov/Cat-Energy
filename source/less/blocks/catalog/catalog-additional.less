@@ -70,10 +70,14 @@
   inset: 0;
   display: grid;
   padding: 0 80px;
-  grid-column: 1fr;
+  grid-template-columns: 1fr;
   align-items: center;
   justify-items: center;
   background-color: rgba(104, 183, 56, 0.85);
+
+  @media (min-width: @tablet-width) and (max-width: 1439px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .catalog-additional__picture {
