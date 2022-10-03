@@ -35,3 +35,19 @@
 
   content: "";
 }
+
+.radio:hover .radio__custom {
+  border: 1px solid #bababa;
+}
+
+.radio:focus .radio__custom {
+  border: 1px solid #444444;
+}
+
+.radio:focus-within .radio__custom {
+  border: 1px solid #444444;
+}
+
+.radio__hidden:disabled ~ * {
+  opacity: 0.6;
+}
