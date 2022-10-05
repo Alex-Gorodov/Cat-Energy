@@ -128,9 +128,12 @@
     outline: 2px solid #444444;
   }
 
-  &:focus-within + .form__icon {
-    fill: @main-color;
-    // stroke: @main-color;
+  &:focus + .form__icon * {
+    color: @main-color;
+  }
+
+  &:focus-within + .form__icon * {
+    color: @main-color;
   }
 }
 
