@@ -9,4 +9,4 @@ burgerButton.onclick = function () {
     burgerButton.setAttribute('aria-label', 'Открыть меню.');
   }
   navList.classList.toggle('navigation__list--opened');
-}
+};
