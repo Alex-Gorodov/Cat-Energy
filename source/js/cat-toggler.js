@@ -1,3 +1,4 @@
+const catContainer = document.querySelector('.example__image-container');
 const catToggler = document.querySelector('.example__image-toggler');
 let mousePosition;
 let offset = [0,0];
@@ -5,31 +6,55 @@ let isDown = false;
 const catBefore = document.querySelector('.example__image--before');
 const catAfter = document.querySelector('.example__image--after');
 
-function parentWidth(elem) {
-  return elem.parentElement.clientWidth;
-}
-
-catToggler.addEventListener('mousedown', function(e) {
+const pushBtn = function(e) {
   isDown = true;
   offset = [
     catToggler.offsetLeft - e.clientX
   ];
-}, true);
+};
 
-document.addEventListener('mouseup', function() {
+catToggler.addEventListener('mousedown', pushBtn, true);
+catToggler.addEventListener('touchstart', () => {
+  console.log('touched');
+  pushBtn();
+});
+
+const unPushBtn = function() {
   isDown = false;
-}, true);
+};
 
-document.addEventListener('mousemove', function(event) {
+
+const moving = function(event) {
   event.preventDefault();
   if (isDown) {
-      mousePosition = {
+    mousePosition = {
 
-          x : event.clientX
+      x : event.clientX
 
-      };
-      catToggler.style.left = (mousePosition.x + offset[0]) + 'px';
-      catBefore.style.aspectRatio = - (mousePosition.x + offset[0]);
-      catAfter.style.aspectRatio = (mousePosition.x + offset[0]);
+    };
+    catToggler.style.left = (mousePosition.x + offset[0]) + 'px';
+    if (window.innerWidth < 768) {
+      catBefore.style.maxWidth = '280px';
+      catAfter.style.maxWidth = '280px';
+    }
+
+    if (window.innerWidth < 1440) {
+      catBefore.style.maxWidth = '512px';
+      catAfter.style.maxWidth = '512px';
+    }
+    catBefore.style.width = (mousePosition.x + offset[0]) + 'px';
+    catAfter.style.width = (-mousePosition.x + offset[0]) + 'px';
   }
-}, true);
+};
+
+document.addEventListener('mouseup', unPushBtn, true);
+document.addEventListener('untouchend', () => {
+  console.log('touched');
+  unPushBtn();
+});
+
+document.addEventListener('mousemove', moving, true);
+document.addEventListener('touchmove', () => {
+  console.log('moved');
+  moving();
+});
