@@ -33,6 +33,7 @@ const moving = function(event) {
   event.preventDefault();
   if (isDown) {
     mousePosition = event.clientX;
+    catToggler.style.transition = '0s';
     catToggler.style.left = (mousePosition + offset) + 'px';
     catBefore.style.width = (mousePosition + offset) + 'px';
     catAfter.style.width = (-mousePosition + offset) + 'px';
