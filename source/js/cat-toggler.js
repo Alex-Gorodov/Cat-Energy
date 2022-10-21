@@ -37,7 +37,6 @@ const moving = function(event) {
     catBefore.style.width = (mousePosition + offset) + 'px';
     catAfter.style.width = (-mousePosition + offset) + 'px';
   }
-
 };
 
 document.addEventListener('mouseup', unPushBtn, true);
