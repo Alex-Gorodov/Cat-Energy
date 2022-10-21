@@ -6,10 +6,6 @@ let isDown = false;
 const catBefore = catContainer.querySelector('.example__image--before');
 const catAfter = catContainer.querySelector('.example__image--after');
 
-const unPushBtn = function() {
-  isDown = false;
-};
-
 if (window.innerWidth < 768) {
   catBefore.style.maxWidth = '280px';
   catAfter.style.maxWidth = '280px';
@@ -24,11 +20,6 @@ const pushBtn = function(e) {
   offset = catToggler.offsetLeft - e.clientX;
 };
 
-catToggler.addEventListener('mousedown', pushBtn, true);
-catToggler.addEventListener('touchstart', () => {
-  pushBtn();
-});
-
 const moving = function(event) {
   event.preventDefault();
   if (isDown) {
@@ -39,16 +30,35 @@ const moving = function(event) {
   }
 };
 
-document.addEventListener('mouseup', unPushBtn, true);
-document.addEventListener('touchend', () => {
-  unPushBtn();
-});
-catContainer.addEventListener('mouseup', unPushBtn, true);
-catContainer.addEventListener('touchend', () => {
-  unPushBtn();
-});
+const unPushBtn = function() {
+  isDown = false;
+};
 
+catToggler.addEventListener('mousedown', pushBtn, true);
+document.addEventListener('mouseup', unPushBtn, true);
+catContainer.addEventListener('mouseup', unPushBtn, true);
 catContainer.addEventListener('mousemove', moving, true);
-catContainer.addEventListener('touchmove', () => {
-  moving();
-});
+
+
+catContainer.addEventListener('touchstart', (event) => {
+  isDown = true;
+  console.log('start');
+  offset = catToggler.offsetLeft - event.clientX;
+}, true);
+
+catContainer.addEventListener('touchmove', (event) => {
+  event.stopImmediatePropagation();
+  event.preventDefault();
+  if (isDown) {
+    console.log('moves');
+    mousePosition = event.clientX;
+    catToggler.style.left = (mousePosition + offset) + 'px';
+    catBefore.style.width = (mousePosition + offset) + 'px';
+    catAfter.style.width = (-mousePosition + offset) + 'px';
+  }
+}, false);
+
+catContainer.addEventListener('touchend', () => {
+  console.log('end');
+  isDown = false;
+}, true);
