@@ -6,14 +6,8 @@ let mousePosition;
 let alphaX = 0;
 let isDown = false;
 
-if (window.innerWidth < 768) {
-  catBefore.style.maxWidth = '280px';
-  catAfter.style.maxWidth = '280px';
-}
-else {
-  catBefore.style.maxWidth = '560px';
-  catAfter.style.maxWidth = '560px';
-}
+catBefore.style.maxWidth = catContainer.clientWidth + 'px';
+catAfter.style.maxWidth = catContainer.clientWidth + 'px';
 
 const pushBtn = function(e) {
   isDown = true;
