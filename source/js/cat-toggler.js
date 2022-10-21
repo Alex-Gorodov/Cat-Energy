@@ -28,7 +28,7 @@ const unPushBtn = function() {
   isDown = false;
 };
 
-catToggler.addEventListener('mousedown', pushBtn, true);
+catContainer.addEventListener('mousedown', pushBtn, true);
 catContainer.addEventListener('mouseup', unPushBtn, true);
 document.addEventListener('mouseup', unPushBtn, true);
 catContainer.addEventListener('mousemove', moving, true);
