@@ -42,7 +42,7 @@ catContainer.addEventListener('mousemove', moving, true);
 catContainer.addEventListener('touchstart', (event) => {
   isDown = true;
   console.log('start');
-  offset = catToggler.offsetLeft - event.clientX;
+  offset = catToggler.offsetLeft - event.targetTouches[0].pageX;
 }, true);
 
 catContainer.addEventListener('touchmove', (event) => {
@@ -50,7 +50,7 @@ catContainer.addEventListener('touchmove', (event) => {
   event.preventDefault();
   if (isDown) {
     console.log('moves');
-    mousePosition = event.clientX;
+    mousePosition = event.targetTouches[0].pageX;
     catToggler.style.left = (mousePosition + offset) + 'px';
     catBefore.style.width = (mousePosition + offset) + 'px';
     catAfter.style.width = (-mousePosition + offset) + 'px';
