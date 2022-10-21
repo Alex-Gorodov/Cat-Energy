@@ -39,7 +39,6 @@ document.addEventListener('mouseup', unPushBtn, true);
 catContainer.addEventListener('mouseup', unPushBtn, true);
 catContainer.addEventListener('mousemove', moving, true);
 
-
 catContainer.addEventListener('touchstart', (event) => {
   isDown = true;
   console.log('start');
