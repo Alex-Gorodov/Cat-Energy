@@ -46,8 +46,8 @@ catContainer.addEventListener('touchstart', (event) => {
 }, true);
 
 catContainer.addEventListener('touchmove', (event) => {
-  event.stopImmediatePropagation();
-  event.preventDefault();
+  // event.stopImmediatePropagation();
+  // event.preventDefault();
   if (isDown) {
     console.log('moves');
     mousePosition = event.targetTouches[0].pageX;
