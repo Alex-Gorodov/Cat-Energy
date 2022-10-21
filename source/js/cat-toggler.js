@@ -46,10 +46,10 @@ catContainer.addEventListener('touchstart', (event) => {
 }, true);
 
 catContainer.addEventListener('touchmove', (event) => {
-  // event.stopImmediatePropagation();
+  event.stopImmediatePropagation();
   event.preventDefault();
-  if (isDown) {
-    console.log('moves');
+  if (isDown && event.target.closest('.example__image-toggler')) {
+    console.log(event.target);
     mousePosition = event.targetTouches[0].pageX;
     catToggler.style.left = (mousePosition + offset) + 'px';
     catBefore.style.width = (mousePosition + offset) + 'px';
