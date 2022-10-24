@@ -1,4 +1,5 @@
 const catContainer = document.querySelector('.example__image-container');
+const catElements = document.querySelectorAll('.example__image-wrapper');
 const catToggler = catContainer.querySelector('.example__image-toggler');
 const catBefore = catContainer.querySelector('.example__image--before');
 const catAfter = catContainer.querySelector('.example__image--after');
@@ -15,9 +16,18 @@ const pushBtn = function(e) {
   alphaX = catToggler.offsetLeft - e.clientX;
 };
 
+catElements.forEach(element => {
+  element.addEventListener('mouseover', () => {
+    isMouseOver = true;
+  });
+  element.addEventListener('mouseout', () => {
+    isMouseOver = false;
+  });
+});
+
 const moving = function(event) {
   event.preventDefault();
-  if (isDown) {
+  if (isDown && isMouseOver) {
     mousePosition = event.clientX;
     catToggler.style.left = (mousePosition + alphaX) + 'px';
     catBefore.style.width = (mousePosition + alphaX) + 'px';
