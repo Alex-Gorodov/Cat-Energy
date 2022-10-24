@@ -5,6 +5,7 @@ const catAfter = catContainer.querySelector('.example__image--after');
 let mousePosition;
 let alphaX = 0;
 let isDown = false;
+let isMouseOver = false;
 
 catBefore.style.maxWidth = catContainer.clientWidth + 'px';
 catAfter.style.maxWidth = catContainer.clientWidth + 'px';
